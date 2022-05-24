@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Activity Recognition</string>
+
+    <string name="activity_update_request_success">Activity updates requested</string>
+    <string name="activity_update_request_failed">Requesting activity updates failed</string>
+    <string name="activity_update_remove_success">Activity updates removed</string>
+    <string name="activity_update_remove_failed">Removing activity updates failed</string>
+
+    <string name="broadcast_detected_activity">broadcast_detected_activity</string>
+    <string name="activity_message">activity_message</string>
+    <string name="activity_confidence">activity_confidence</string>
+    <string name="waiting_title">Detectando sua atividade</string>
+
+    <string name="time_to_start">É hora de iniciar a atividade</string>
+    <string name="still_text">Você está parado no momento!</string>
+    <string name="walking_text">Você está andando!</string>
+    <string name="running_text">Você está correndo, continue fazendo isso!</string>
+    <string name="vehicle_text">Você está no veículo!</string>
+    <string name="bicycle_text">Você está na bicicleta!</string>
+    <string name="on_foot_text">Você está em pé!</string>
+    <string name="tilting_text">Você está em inclinação!</string>
+    <string name="image">image</string>
+    <string name="waiting_text">Aguarde...</string>
+
+    <string name="permission_rational_dialog_title">Activity Recognition Permission Needed</string>
+    <string name="permission_rational_dialog_message">To get information about your activity, you need to give Activity Recognition permission to Pet Buddy.</string>
+    <string name="permission_rational_dialog_positive_button_text">Request a permission</string>
+    <string name="permission_rational_dialog_negative_button_text">No thanks</string>
+
+    <string name="settings_dialog_title">Permissão de reconhecimento de atividade necessária</string>
+    <string name="settings_dialog_message">Dê permissão manualmente nas configurações do aplicativo</string>
+    <string name="settings_dialog_positive_button_text">Go to settings</string>
+    <string name="settings_dialog_negative_button_text">No thanks</string>
+
+    <string name="transition_update_request_success">Transition updates requested</string>
+    <string name="transition_update_request_failed">Requesting transition updates failed</string>
+    <string name="transition_update_remove_success">Transition updates removed</string>
+    <string name="transition_update_remove_failed">Removing transition updates failed</string>
+
+</resources>
