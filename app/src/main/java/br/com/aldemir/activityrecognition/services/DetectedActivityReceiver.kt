@@ -30,10 +30,12 @@ class DetectedActivityReceiver : BroadcastReceiver() {
 
         fun getPendingIntent(context: Context): PendingIntent {
             val intent = Intent(context, DetectedActivityReceiver::class.java)
-            return PendingIntent.getBroadcast(
-                context, DETECTED_PENDING_INTENT_REQUEST_CODE, intent,
-                PendingIntent.FLAG_UPDATE_CURRENT
-            )
+            val pendingIntent: PendingIntent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                PendingIntent.getBroadcast(context, DETECTED_PENDING_INTENT_REQUEST_CODE, intent, PendingIntent.FLAG_IMMUTABLE)
+            } else {
+                PendingIntent.getBroadcast(context, DETECTED_PENDING_INTENT_REQUEST_CODE, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+            }
+            return pendingIntent
         }
     }
 
@@ -105,7 +107,7 @@ class DetectedActivityReceiver : BroadcastReceiver() {
         val builder = NotificationCompat.Builder(context, DETECTED_ACTIVITY_CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setContentTitle(context.getString(activity.activityText))
-            .setContentText("Seu animal de estimação estar ${detectedActivity.confidence}% certo")
+            .setContentText("Você estar ${detectedActivity.confidence}% certo")
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setContentIntent(pendingIntent)
             .setOnlyAlertOnce(true)
